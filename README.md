@@ -3,9 +3,9 @@
 ## Introduction
 Our project aims to enhance the knowledge base and accessibility of Large Language Models (LLMs) for Machine Learning engineers. We wanted to solve the following downsides of modern LLMs:
 
-The free version of ChatGPT has a very early cutoff (2021), so you can’t ask about any modern research papers. Our models were fine-tuned on the latest research papers, and mitigate that issue.
-The next downside is the accessibility. The best models are expensive (GPT-4 is ~2000 rubles per month, good luck paying for it with a Russian card). Also, all the state-of-the-art LLMs require using a VPN to access the websites, making the models even less accessible. Our solution can be run locally on almost any machine and provide GPT-3.5-like results for free with no internet or VPN.
-The last downside is the customizability. You can’t fine-tune any of the mainstream models, like GPT and Claude because they are closed-source (well, you can, but it costs a lot and you will have to send your data to a third party). The models we are using are easily fine-tunable on consumer-grade GPUs and thanks to LoRa, you can easily change the model’s purpose by changing the adapter weights. (LoRa weights are 15MB, while the entire model is 14GB)
+- The free version of ChatGPT has a very early cutoff (2021), so you can’t ask about any modern research papers. Our models were fine-tuned on the latest research papers, and mitigate that issue.
+- The next downside is the accessibility. The best models are expensive (GPT-4 is ~2000 rubles per month, good luck paying for it with a Russian card). Also, all the state-of-the-art LLMs require using a VPN to access the websites, making the models even less accessible. Our solution can be run locally on almost any machine and provide GPT-3.5-like results for free with no internet or VPN.
+- The last downside is the customizability. You can’t fine-tune any of the mainstream models, like GPT and Claude because they are closed-source (well, you can, but it costs a lot and you will have to send your data to a third party). The models we are using are easily fine-tunable on consumer-grade GPUs and thanks to LoRa, you can easily change the model’s purpose by changing the adapter weights. (LoRa weights are 15MB, while the entire model is 14GB)
 
 
 ## How to use
@@ -15,6 +15,12 @@ The last downside is the customizability. You can’t fine-tune any of the mains
 3. If you have downloaded the llama2_v2 model, skip the next step:
 4. Change the model_path on line 67 in [server.py](./production/server.py)
 5. Run the [server.py](./production/server.py). It's going to launch a web server on http://localhost:1337. You can use the model via the /chain endpoint or use the Flutter app, putting your URL into the lib/message_provider.dart.
+
+## Contents:
+- data/ folder contains the notebook that was used for preprocessing and the final dataset;
+- models/ folder contains fine-tuned LoRA adapters for LLaMa and Orca;
+- production/ folder contains the code that is used to run the model;
+- testing/ folder contains notebooks that were used for experimenting.
 
 ## Contributions
 **Daria Lebedeva:**
