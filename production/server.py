@@ -4,16 +4,11 @@ from flask import Flask, Response, request
 import threading
 import queue
 
-from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
-
-from flask import Flask, request, jsonify, Response
 from langchain.vectorstores import FAISS
 from langchain.prompts import PromptTemplate
-from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain.embeddings.gpt4all import GPT4AllEmbeddings
 from langchain.llms import GPT4All
 from langchain.llms import LlamaCpp
-from langchain.prompts import PromptTemplate
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain.callbacks.manager import CallbackManager
 
